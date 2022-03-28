@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>mmPDF</title>
+<link href="favicon.ico" rel="icon" type="image/x-icon" >
+<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="title">mmPDF ver 1.0</div>
+<button id="upload-button">Seleziona PDF</button>
+<input type="file" id="file-to-upload" accept="application/pdf" />
+
+<div id="pdf-main-container">
+	<div id="pdf-loader">Caricamento documento...</div>
+	<div id="pdf-contents">
+		<div id="pdf-meta">
+			<div id="pdf-prev-container">
+				<button id="pdf-prev">Prec</button>
+			</div>
+			<div id="page-count-container">Pag <div id="pdf-current-page"></div> di <div id="pdf-total-pages"></div></div>
+            <div id="pdf-next-container">
+				<button id="pdf-next">Succ</button>
+			</div>
+		</div>
+        <div><a id="download-image" href="#">Salva pagina</a></div>
+		<canvas id="pdf-canvas" width="400"></canvas>
+		<div id="page-loader">Caricamento pagina...</div>
+	</div>
+    <canvas style="display: none" id="pdf-canvas-big" width="800"></canvas>
+</div>
+
+<script src="jquery-3.6.0.slim.min.js"></script> 
+<script src="pdf.js"></script>
+
+<script type="text/js-worker" id="pdfjs-worker"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+--- pdf.worker.2.13.216.js	2022-02-27 18:05:32.000000000 +0100
++++ pdf.worker.js	2022-03-28 23:35:53.967391549 +0200
+@@ -92708,4 +92708,3 @@
+ /******/ })()
+ ;
+ });
+-//# sourceMappingURL=pdf.worker.js.map
+\ No newline at end of file

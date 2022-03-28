@@ -1,0 +1,50 @@
+--- pdf.2.13.216.js	2022-03-28 23:44:54.874373081 +0200
++++ pdf.js	2022-03-28 23:47:35.594311595 +0200
+@@ -7502,8 +7502,14 @@
+           if (!(0, _util.isSameOrigin)(window.location.href, workerSrc)) {
+             workerSrc = PDFWorkerUtil.createCDNWrapper(new URL(workerSrc, window.location).href);
+           }
+-
+-          var worker = new Worker(workerSrc);
++          
++          if (document.getElementById("pdfjs-worker")) {
++              let blob = new Blob(document.getElementById("pdfjs-worker").textContent, {type: 'text/javascript'});
++              var worker = new Worker(window.URL.createObjectURL(blob));
++          } else {
++              var worker = new Worker(workerSrc);
++          }
++          
+           var messageHandler = new _message_handler.MessageHandler("main", "worker", worker);
+ 
+           var terminateEarly = function terminateEarly() {
+@@ -10140,7 +10146,8 @@
+   var removeScriptElement = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+   return new Promise(function (resolve, reject) {
+     var script = document.createElement("script");
+-    script.src = src;
++    let bbb = new Blob([document.getElementById("pdfjs-worker").textContent], {type: 'text/javascript'});
++    script.src = window.URL.createObjectURL(bbb);
+ 
+     script.onload = function (evt) {
+       if (removeScriptElement) {
+@@ -10158,6 +10165,7 @@
+   });
+ }
+ 
++
+ function deprecated(details) {
+   console.log("Deprecated API usage: " + details);
+ }
+@@ -14950,6 +14958,7 @@
+ exports.GlobalWorkerOptions = GlobalWorkerOptions;
+ GlobalWorkerOptions.workerPort = GlobalWorkerOptions.workerPort === undefined ? null : GlobalWorkerOptions.workerPort;
+ GlobalWorkerOptions.workerSrc = GlobalWorkerOptions.workerSrc === undefined ? "" : GlobalWorkerOptions.workerSrc;
++GlobalWorkerOptions.workerElementCode = GlobalWorkerOptions.workerElementCode === undefined ? "" : GlobalWorkerOptions.workerElementCode;
+ 
+ /***/ }),
+ /* 155 */
+@@ -24982,4 +24991,3 @@
+ /******/ })()
+ ;
+ });
+-//# sourceMappingURL=pdf.js.map
