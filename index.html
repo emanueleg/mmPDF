@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<div id="title">mmPDF ver 1.0</div>
+<div id="title">mmPDF ver 1.1</div>
 <button id="upload-button">Seleziona PDF</button>
 <input type="file" id="file-to-upload" accept="application/pdf" />
 
@@ -24,7 +24,10 @@
 				<button id="pdf-next">Succ</button>
 			</div>
 		</div>
-        <div><a id="download-image" href="#">Salva pagina</a></div>
+        <div id="download-btns">
+            <a id="download-png-image" href="#">Salva pagina in PNG</a>
+            <a id="download-jpg-image" href="#">Salva pagina in JPG</a>
+        </div>
 		<canvas id="pdf-canvas" width="400"></canvas>
 		<div id="page-loader">Caricamento pagina...</div>
 	</div>

@@ -47,7 +47,8 @@ function showPage(page_no) {
 	// While page is being rendered hide the canvas and show a loading message
 	$("#pdf-canvas").hide();
 	$("#page-loader").show();
-	$("#download-image").hide();
+	$("#download-png-image").hide();
+    $("#download-jpg-image").hide();
 
 	// Update current page in HTML
 	$("#pdf-current-page").text(page_no);
@@ -91,7 +92,8 @@ function showPage(page_no) {
                 // Show the canvas and hide the page loader
                 $("#pdf-canvas").show();
                 $("#page-loader").hide();
-                $("#download-image").show();
+                $("#download-png-image").show();
+                $("#download-jpg-image").show();
             });
 
             
@@ -137,8 +139,13 @@ $("#pdf-next").on('click', function() {
 		showPage(++__CURRENT_PAGE);
 });
 
-// Download button
-$("#download-image").on('click', function() {
+// Download buttons
+$("#download-png-image").on('click', function() {
     let padded_num = __CURRENT_PAGE.toString().padStart(__TOTAL_PAGES.toString(10).length, '0')
 	$(this).attr('href', __CANVAS_BIG.toDataURL()).attr('download', __PDF_NAME + '_pag'+padded_num+'.png');
+});
+
+$("#download-jpg-image").on('click', function() {
+    let padded_num = __CURRENT_PAGE.toString().padStart(__TOTAL_PAGES.toString(10).length, '0')
+	$(this).attr('href', __CANVAS_BIG.toDataURL('image/jpeg', 1.0)).attr('download', __PDF_NAME + '_pag'+padded_num+'.jpg');
 });

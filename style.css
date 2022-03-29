@@ -83,11 +83,20 @@
 	font-size: 13px;
 }
 
-#download-image {
+#download-png-image {
 	width: 150px;
-	display: block;
+	display: inline-block;
 	margin: 20px auto 20px auto;
-	font-size: 13px;
-	text-align: center;
+	
 }
 
+#download-jpg-image {
+	width: 150px;
+	display: inline-block;
+	margin: 20px auto 20px auto;
+}
+
+#download-btns {
+    text-align: center;
+    font-size: 13px;
+}

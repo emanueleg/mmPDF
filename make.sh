@@ -14,7 +14,7 @@ head -6 index.html | tail -n 1 >> $OUTFILE
 echo "<style type=\"text/css\">" >> $OUTFILE
 cat style.css >> $OUTFILE
 echo "</style>" >> $OUTFILE
-head -33 index.html | tail -n 26  >> $OUTFILE
+head -36 index.html | tail -n 29  >> $OUTFILE
 echo "<script>" >> $OUTFILE
 cat jquery-3.6.0.slim.min.js >> $OUTFILE
 echo "</script>" >> $OUTFILE
