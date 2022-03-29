@@ -17,22 +17,16 @@ echo "</style>" >> $OUTFILE
 head -33 index.html | tail -n 26  >> $OUTFILE
 echo "<script>" >> $OUTFILE
 cat jquery-3.6.0.slim.min.js >> $OUTFILE
-echo "" >> $OUTFILE
 echo "</script>" >> $OUTFILE
 echo "<script>" >> $OUTFILE
 cat pdf.js >> $OUTFILE
 echo "</script>" >> $OUTFILE
-echo "" >> $OUTFILE
 echo "<script type=\"text/js-worker\" id=\"pdfjs-worker\">" >> $OUTFILE
 cat pdf.worker.js >> $OUTFILE
 echo "</script>" >> $OUTFILE
-echo "" >> $OUTFILE
 echo "<script>" >> $OUTFILE
-echo "" >> $OUTFILE
 cat script.js >> $OUTFILE
-echo "" >> $OUTFILE
 echo "</script>" >> $OUTFILE
-echo "" >> $OUTFILE
 tail -n 2 index.html >> $OUTFILE
 
 rm pdf.js pdf.worker.js
