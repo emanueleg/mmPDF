@@ -122,19 +122,28 @@ chVgJJD4SQiHHf8B0ACOc5EsFkUAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
 	font-size: 13px;
 }
 
-#download-image {
+#download-png-image {
 	width: 150px;
-	display: block;
+	display: inline-block;
 	margin: 20px auto 20px auto;
-	font-size: 13px;
-	text-align: center;
+	
 }
 
+#download-jpg-image {
+	width: 150px;
+	display: inline-block;
+	margin: 20px auto 20px auto;
+}
+
+#download-btns {
+    text-align: center;
+    font-size: 13px;
+}
 </style>
 </head>
 
 <body>
-<div id="title">mmPDF ver 1.0</div>
+<div id="title">mmPDF ver 1.1</div>
 <button id="upload-button">Seleziona PDF</button>
 <input type="file" id="file-to-upload" accept="application/pdf" />
 
@@ -150,7 +159,10 @@ chVgJJD4SQiHHf8B0ACOc5EsFkUAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
 				<button id="pdf-next">Succ</button>
 			</div>
 		</div>
-        <div><a id="download-image" href="#">Salva pagina</a></div>
+        <div id="download-btns">
+            <a id="download-png-image" href="#">Salva pagina in PNG</a>
+            <a id="download-jpg-image" href="#">Salva pagina in JPG</a>
+        </div>
 		<canvas id="pdf-canvas" width="400"></canvas>
 		<div id="page-loader">Caricamento pagina...</div>
 	</div>
@@ -117918,7 +117930,8 @@ function showPage(page_no) {
 	// While page is being rendered hide the canvas and show a loading message
 	$("#pdf-canvas").hide();
 	$("#page-loader").show();
-	$("#download-image").hide();
+	$("#download-png-image").hide();
+    $("#download-jpg-image").hide();
 
 	// Update current page in HTML
 	$("#pdf-current-page").text(page_no);
@@ -117962,7 +117975,8 @@ function showPage(page_no) {
                 // Show the canvas and hide the page loader
                 $("#pdf-canvas").show();
                 $("#page-loader").hide();
-                $("#download-image").show();
+                $("#download-png-image").show();
+                $("#download-jpg-image").show();
             });
 
             
@@ -118008,10 +118022,15 @@ $("#pdf-next").on('click', function() {
 		showPage(++__CURRENT_PAGE);
 });
 
-// Download button
-$("#download-image").on('click', function() {
+// Download buttons
+$("#download-png-image").on('click', function() {
     let padded_num = __CURRENT_PAGE.toString().padStart(__TOTAL_PAGES.toString(10).length, '0')
 	$(this).attr('href', __CANVAS_BIG.toDataURL()).attr('download', __PDF_NAME + '_pag'+padded_num+'.png');
+});
+
+$("#download-jpg-image").on('click', function() {
+    let padded_num = __CURRENT_PAGE.toString().padStart(__TOTAL_PAGES.toString(10).length, '0')
+	$(this).attr('href', __CANVAS_BIG.toDataURL('image/jpeg', 1.0)).attr('download', __PDF_NAME + '_pag'+padded_num+'.jpg');
 });
 </script>
 </body>
