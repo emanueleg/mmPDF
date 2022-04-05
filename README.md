@@ -1,5 +1,7 @@
 # mmPDF
 
+![](mmPDF_screenshot01.png)
+
 Semplice applicazione web funzionante off-line per salvare come immagini PNG o JPEG le pagine di un PDF.
 
 Open source, senza banner, rispetta la privacy, non richiede connessione a Internet, funziona direttamente nel browser senza installazione.
@@ -17,4 +19,3 @@ Open source, no banners, respects your privacy, does not require Internet connec
 Uses PDF.js (Mozilla License) and jQuery (MIT License). Sponge icon by flaticon.com (Flaticon License).
 
 Source modules, patches and the build script are provided - feel free to improve and submit a PR.
-
