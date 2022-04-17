@@ -1,9 +1,12 @@
 # mmPDF
+* [:it: Info su mmPDF](#informazioni-su-mmpdf)
+* [:uk: More about mmPDF](#some-info-on-mmpdf)
 
 ![](mmPDF_screenshot01.png)
 
 ---
 
+# Informazioni su mmPDF
 Semplice applicazione web funzionante off-line per salvare come immagini PNG o JPEG le pagine di un PDF.
 
 Open source, senza banner, rispetta la privacy, non richiede connessione a Internet, funziona direttamente nel browser senza installazione.
@@ -14,7 +17,7 @@ Open source, senza banner, rispetta la privacy, non richiede connessione a Inter
 2. Fare doppio clic sul file scaricato (dovrebbe aprirsi nel browser)
 3. Selezionare il file PDF, andare alla pagina desiderata ed esportarla in PNG o JPG
 
-## Informazioni tecniche e Licenze
+## Info tecniche e Licenze
 
 Utilizza PDF.js (Mozilla License) e jQuery (MIT License). L'icona Sponge proviene da flaticon.com (Flaticon License).
 
@@ -22,6 +25,8 @@ Vengono forniti i codici sorgente di tutti i componenti, le patch e lo script pe
 Il file ``make.sh`` può essere usato per verificare la riproducibilità del file finale pubblicato in ``/build``.
 
 ---
+
+# Some info on mmPDF
 
 Simple offline one-page-app for saving PDF pages as PNG or JPEG images.
 
