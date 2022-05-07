@@ -7,7 +7,7 @@
 ---
 
 # Informazioni su mmPDF
-Semplice applicazione web funzionante off-line per salvare come immagini PNG o JPEG le pagine di un PDF.
+Semplice applicazione web a singola pagine funzionante off-line per convertire come immagini PNG o JPEG le pagine di un PDF.
 
 Open source, senza banner, rispetta la privacy, non richiede connessione a Internet, funziona direttamente nel browser senza installazione.
 
