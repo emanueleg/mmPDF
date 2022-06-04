@@ -19,7 +19,9 @@ Open source, senza banner, rispetta la privacy, non richiede connessione a Inter
 
 ## Info tecniche e Licenze
 
-Utilizza PDF.js (Mozilla License) e jQuery (MIT License). L'icona Sponge proviene da flaticon.com (Flaticon License).
+mmPDF utilizza PDF.js (Mozilla License) e jQuery (MIT License). L'icona Sponge proviene da flaticon.com (Flaticon License).
+
+Il Web Worker PDF è incluso nella pagina tramite un tag ``script`` con ``type='javascript/worker'``, affinché non venga parsato dal browser. Il codice è quindi estratto come stringa utilizzando l'attributo ``textContent`` dell'oggetto, passato a ``Blob()`` per creare il file e infine caricato e parsato con ``window.URL.createObjectURL()``. L'immagine Favicon è inclusa nella pagina utilizzando la codifica base64. I file CSS e JavaScript esterni sono inclusi nella app come stili e script interni. 
 
 Vengono forniti i codici sorgente di tutti i componenti, le patch e lo script per assemblare la pagina - sentitivi liberi di migliorare il codice e inviare PR.
 Il file ``make.sh`` può essere usato per verificare la riproducibilità del file finale pubblicato in ``/build``.
@@ -38,9 +40,11 @@ Open source, no banners, respects your privacy, does not require Internet connec
 2. Double click the downloaded file (it should open inside a browser tab)
 3. Select a PDF, go to the desired pag and export it as PNG or JPG
 
-## Technical info and Licenses
+## Technical details and Licenses
 
-Uses PDF.js (Mozilla License) and jQuery (MIT License). Sponge icon by flaticon.com (Flaticon License).
+mmPDF is based on PDF.js (Mozilla License) and jQuery (MIT License). The Sponge icon comes from flaticon.com (Flaticon License).
+
+The PDF Web Worker is embedded into the page using a ``script`` tag with ``type='javascript/worker'``, so the browser doesn't parse the JS. That code is then extracted as a string using ``textContent`` on the object and passed to ``Blob()`` to create the file, which is parsed by ``window.URL.createObjectURL()``. The Favicon image is embedded into the page in base64-encoded form. The external CSS and JavaScript files are embedded as internal stylesheets and script tag. 
 
 Source modules, patches and the build script are provided - feel free to improve and submit a PR.
 The ``make.sh`` file can be used to verify the reproducibility of the assembled output file published inside ``/build``.
